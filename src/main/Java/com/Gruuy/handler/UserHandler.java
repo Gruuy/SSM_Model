@@ -10,4 +10,8 @@ public class UserHandler {
         System.out.println("进来了！");
         return "Hi";
     }
+    @RequestMapping("hellohtml")
+    public String htmlhello(){
+        return "hello";
+    }
 }

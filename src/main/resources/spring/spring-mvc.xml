@@ -18,7 +18,14 @@
     <mvc:default-servlet-handler/>
 
     <!-- 配置jsp 显示ViewResolver -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean id="htmlviewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="com.Gruuy.InternalView.HtmlResourceView"/>
+        <property name="order" value="0"/>
+        <property name="prefix" value="/html/"/>
+        <property name="suffix" value=".html"/>
+    </bean>
+    <bean id="jspviewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="order" value="1"/>
         <property name="prefix" value="/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
